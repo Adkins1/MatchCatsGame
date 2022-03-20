@@ -16,6 +16,7 @@ using System.Windows.Shapes;
 
 namespace MatchCatsGame
 {
+    using System.Windows.Media.Animation;
     using System.Windows.Threading;
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -108,6 +109,24 @@ namespace MatchCatsGame
             {
                 SetUpGame();
             }
+        }
+
+        private void TextBlock_MouseEnter(object sender, MouseEventArgs e)
+        {
+            TextBlock? textBlock = sender as TextBlock;
+            if (textBlock == null) return;
+            textBlock.Foreground = Brushes.Blue;
+            textBlock.FontSize = 44;
+
+        }
+
+        private void TextBlock_MouseLeave(object sender, MouseEventArgs e)
+        {
+            TextBlock? textBlock = sender as TextBlock;
+            if (textBlock == null) return;
+            textBlock.Foreground = Brushes.Black;
+            textBlock.FontSize = 36;
+
         }
     }
 }
